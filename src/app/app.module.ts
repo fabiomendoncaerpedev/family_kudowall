@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreateStickerComponent } from './components/stickers/create-sticker/create-sticker.component';
+import { ListStickersComponent } from './components/stickers/list-stickers/list-stickers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CreateStickerComponent
+    CreateStickerComponent,
+    ListStickersComponent
   ],
   imports: [
     BrowserModule,
