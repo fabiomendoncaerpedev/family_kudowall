@@ -1,5 +1,5 @@
 export interface Sticker {
-  id: number,
+  id?: number,
   content: string,
   authorship: string,
   model: string

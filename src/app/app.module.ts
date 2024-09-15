@@ -9,6 +9,7 @@ import { CreateStickerComponent } from './components/stickers/create-sticker/cre
 import { ListStickersComponent } from './components/stickers/list-stickers/list-stickers.component';
 import { StickerComponent } from './components/stickers/sticker/sticker.component';
 import { StickerService } from './components/stickers/services/sticker.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StickerService } from './components/stickers/services/sticker.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     StickerService

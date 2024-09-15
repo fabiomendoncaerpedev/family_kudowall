@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StickerService } from '../services/sticker.service';
+import { Sticker } from 'src/app/models/sticker';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-sticker',
@@ -7,20 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateStickerComponent implements OnInit {
 
-  sticker = {
-    id: '1',
-    content: 'Aprendendo Angular',
-    authorship: 'Dev',
-    model: 'model1'
-  }
+  sticker: Sticker = {
+    authorship: '',
+    content: '',
+    model: ''
+  };
 
-  constructor() { }
+  constructor(
+    private stickerService: StickerService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   createSticker() {
-    alert("New sticker created")
+    this.stickerService.create(this.sticker).subscribe(() =>  {
+      this.router.navigate(['/list-stickers'])
+    });
   }
-
 }

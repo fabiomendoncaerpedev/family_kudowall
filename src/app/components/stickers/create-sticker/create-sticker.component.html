@@ -18,17 +18,17 @@
       class="input"
       id="authorship"
       name="authorship"
-      placeholder="Digite o Autoria"
+      placeholder="Digite a Autoria"
       [(ngModel)]="sticker.authorship"
     >
     <label for="model">Selecione o modelo do Card:</label>
     <div class="container-radio">
       <div class="radio-modelo" *ngFor="let modelNumber of [1,2,3]">
-        <label for="model{{modelNumber}}">
+        <label for="modelo{{modelNumber}}">
           <input
             type="radio"
-            id="model{{modelNumber}}"
-            value="model{{modelNumber}}"
+            id="modelo{{modelNumber}}"
+            value="modelo{{modelNumber}}"
             name="card-model"
             [(ngModel)]="sticker.model"
           >

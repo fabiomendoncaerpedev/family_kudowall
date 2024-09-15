@@ -16,6 +16,9 @@ export class ListStickersComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.stickerService.list().subscribe((response) => {
+      this.stickersList = response;
+    });
   }
 
 }
