@@ -19,4 +19,16 @@ export class StickerService {
   create(sticker: Sticker): Observable<Sticker> {
     return this.http.post<Sticker>(this.API, sticker);
   }
+
+  delete(id: number): Observable<Sticker> {
+    const url = `${this.API}/${id}`;
+
+    return this.http.delete<Sticker>(url);
+  }
+
+  findById(id: number): Observable<Sticker> {
+    const url = `${this.API}/${id}`;
+
+    return this.http.get<Sticker>(url);
+  }
 }
