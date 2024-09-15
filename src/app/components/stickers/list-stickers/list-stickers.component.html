@@ -15,6 +15,10 @@
     </app-sticker>
   </div>
 </section>
+<app-load-more-button
+  (click)="loadMoreStickers()"
+  [has-more-stickers]="hasMoreStickers">
+</app-load-more-button>
 <ng-template
   #noStickers>
   <div class="ff-inter sem-pensamentos">

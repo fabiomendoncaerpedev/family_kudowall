@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Sticker } from 'src/app/models/sticker';
 
@@ -12,8 +12,15 @@ export class StickerService {
     private http: HttpClient
   ) { }
 
-  list(): Observable<Array<Sticker>> {
-    return this.http.get<Array<Sticker>>(this.API);
+  list(page: number): Observable<Array<Sticker>> {
+    const itemsByPage: number = 2;
+
+    let params = new HttpParams()
+      .set('_page', page)
+      .set('_limit', itemsByPage);
+
+    return this.http
+      .get<Array<Sticker>>(this.API, { params });
   }
 
   create(sticker: Sticker): Observable<Sticker> {

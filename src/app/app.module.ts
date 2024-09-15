@@ -12,6 +12,7 @@ import { StickerComponent } from './components/stickers/sticker/sticker.componen
 import { StickerService } from './components/stickers/services/sticker.service';
 import { DeleteStickerComponent } from './components/stickers/delete-sticker/delete-sticker.component';
 import { EditStickerComponent } from './components/stickers/edit-sticker/edit-sticker.component';
+import { LoadMoreButtonComponent } from './components/stickers/list-stickers/load-more-button/load-more-button.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditStickerComponent } from './components/stickers/edit-sticker/edit-st
     ListStickersComponent,
     StickerComponent,
     DeleteStickerComponent,
-    EditStickerComponent
+    EditStickerComponent,
+    LoadMoreButtonComponent
   ],
   imports: [
     BrowserModule,

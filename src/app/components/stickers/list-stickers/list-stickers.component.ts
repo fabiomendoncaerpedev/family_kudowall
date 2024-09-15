@@ -9,15 +9,26 @@ import { StickerService } from '../services/sticker.service';
 })
 export class ListStickersComponent implements OnInit {
 
+  hasMoreStickers: boolean = true;
   stickersList!: Array<Sticker>;
+  page: number = 1;
 
   constructor(
     private stickerService: StickerService
   ) { }
 
   ngOnInit(): void {
-    this.stickerService.list().subscribe((response) => {
+    this.stickerService.list(this.page).subscribe((response) => {
       this.stickersList = response;
+    });
+  }
+
+  loadMoreStickers() {
+    this.stickerService.list(++this.page).subscribe((response) => {
+      this.stickersList.push(...response);
+
+      if (!response.length)
+        this.hasMoreStickers = false;
     });
   }
 
