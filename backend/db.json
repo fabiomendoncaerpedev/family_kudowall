@@ -1,0 +1,22 @@
+{
+  "stickers": [
+    {
+      "id": 1,
+      "content": "Que bom que você veio",
+      "authorship": "Fabio",
+      "model": "modelo1"
+    },
+    {
+      "id": 2,
+      "content": "Que bom que você veio antes tarde do que nunca",
+      "authorship": "Thatazinha",
+      "model": "modelo2"
+    },
+    {
+      "id": 3,
+      "content": "Que bom que você veio truta",
+      "authorship": "Vidao",
+      "model": "modelo3"
+    }
+  ]
+}
