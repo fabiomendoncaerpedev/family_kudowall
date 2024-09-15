@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreateStickerComponent } from './components/stickers/create-sticker/create-sticker.component';
 import { ListStickersComponent } from './components/stickers/list-stickers/list-stickers.component';
+import { StickerComponent } from './components/stickers/sticker/sticker.component';
+import { StickerService } from './components/stickers/services/sticker.service';
 
 @NgModule({
   declarations: [
@@ -14,14 +16,17 @@ import { ListStickersComponent } from './components/stickers/list-stickers/list-
     HeaderComponent,
     FooterComponent,
     CreateStickerComponent,
-    ListStickersComponent
+    ListStickersComponent,
+    StickerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    StickerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
