@@ -11,6 +11,7 @@ import { StickerComponent } from './components/stickers/sticker/sticker.componen
 import { StickerService } from './components/stickers/services/sticker.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteStickerComponent } from './components/stickers/delete-sticker/delete-sticker.component';
+import { EditStickerComponent } from './components/stickers/edit-sticker/edit-sticker.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DeleteStickerComponent } from './components/stickers/delete-sticker/del
     CreateStickerComponent,
     ListStickersComponent,
     StickerComponent,
-    DeleteStickerComponent
+    DeleteStickerComponent,
+    EditStickerComponent
   ],
   imports: [
     BrowserModule,

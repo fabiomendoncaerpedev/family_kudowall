@@ -6,7 +6,11 @@
   <p class="authorship"><b>{{ sticker.authorship }}</b></p>
   <div class="acoes">
     <button class="botao-editar">
-      <img src="../../../../assets/images/icone-editar.png" alt="Edit Icon">
+      <img
+        routerLink="/stickers/edit-sticker/{{ sticker.id }}"
+        src="../../../../assets/images/icone-editar.png"
+        alt="Edit Icon"
+      >
     </button>
     <button class="botao-excluir">
       <img

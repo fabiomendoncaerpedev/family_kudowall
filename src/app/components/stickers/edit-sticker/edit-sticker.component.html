@@ -1,0 +1,59 @@
+<section class="container editar-pensamentos ff-inter">
+  <header class="header">
+    <h2>Adicione um<br/>pensamento novo:</h2>
+  </header>
+  <form>
+    <label for="sticker">Pensamento</label>
+    <input
+      type="textarea"
+      class="input"
+      id="sticker"
+      name="sticker"
+      placeholder="Digite o pensamento"
+      [(ngModel)]="sticker.content"
+    >
+    <label for="authorship">Autoria</label>
+    <input
+      type="textarea"
+      class="input"
+      id="authorship"
+      name="authorship"
+      placeholder="Digite a Autoria"
+      [(ngModel)]="sticker.authorship"
+    >
+    <label for="model">Selecione o modelo do Card:</label>
+    <div class="container-radio">
+      <div class="radio-modelo" *ngFor="let modelNumber of [1,2,3]">
+        <label for="modelo{{modelNumber}}">
+          <input
+            type="radio"
+            id="modelo{{modelNumber}}"
+            value="modelo{{modelNumber}}"
+            name="card-model"
+            [(ngModel)]="sticker.model"
+          >
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>Modelo {{ modelNumber }}</span>
+        </label>
+        Prévia:
+        <div class="modelo modelo{{modelNumber}} ff-roboto-mono">
+          <img src="../../../../assets/images/modelo{{modelNumber}}.png" alt="Blue Quotes">
+          <p class="conteudo">{{ sticker.content }}</p>
+          <p class="autoria"><b>{{ sticker.authorship }}</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="acoes">
+      <button
+        (click)="editSticker()"
+        class="botao">Salvar
+      </button>
+      <button
+        routerLink=""
+        class="botao">Cancelar
+      </button>
+    </div>
+  </form>
+</section>

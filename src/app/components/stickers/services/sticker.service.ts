@@ -31,4 +31,10 @@ export class StickerService {
 
     return this.http.get<Sticker>(url);
   }
+
+  edit(sticker: Sticker): Observable<Sticker> {
+    const url = `${this.API}/${sticker.id}`;
+
+    return this.http.put<Sticker>(url, sticker);
+  }
 }
