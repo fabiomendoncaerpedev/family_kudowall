@@ -2,25 +2,48 @@
   <header class="header">
     <h2>Adicione um<br/>pensamento novo:</h2>
   </header>
-  <form>
+  <form
+    [formGroup]="form">
     <label for="sticker">Pensamento</label>
     <input
       type="textarea"
       class="input"
       id="sticker"
-      name="sticker"
+      formControlName="content"
       placeholder="Digite o pensamento"
-      [(ngModel)]="sticker.content"
     >
+    <div
+      *ngIf="
+        form.get('content')?.touched &&
+        form.get('content')?.errors
+      "
+      class="mensagem__erro">
+      Pensamento é Obrigatório!
+    </div>
     <label for="authorship">Autoria</label>
     <input
       type="textarea"
       class="input"
       id="authorship"
-      name="authorship"
+      formControlName="authorship"
       placeholder="Digite a Autoria"
-      [(ngModel)]="sticker.authorship"
     >
+    <div
+      *ngIf="
+        form.get('authorship')?.touched &&
+        form.get('authorship')?.errors?.['required']
+      "
+      class="mensagem__erro">
+      Autoria é Obrigatória!
+    </div>
+    <div
+      *ngIf="
+        form.get('authorship')?.touched &&
+        form.get('authorship')?.errors?.['minlength']
+      "
+      class="mensagem__erro">
+      Autoria precisa ter no mínimo 3 caracteres!
+    </div>
     <label for="model">Selecione o modelo do Card:</label>
     <div class="container-radio">
       <div class="radio-modelo" *ngFor="let modelNumber of [1,2,3]">
@@ -29,8 +52,7 @@
             type="radio"
             id="modelo{{modelNumber}}"
             value="modelo{{modelNumber}}"
-            name="card-model"
-            [(ngModel)]="sticker.model"
+            formControlName="model"
           >
           <div class="custom-radio">
             <span></span>
@@ -40,15 +62,17 @@
         Prévia:
         <div class="modelo modelo{{modelNumber}} ff-roboto-mono">
           <img src="../../../../assets/images/modelo{{modelNumber}}.png" alt="Blue Quotes">
-          <p class="conteudo">{{ sticker.content }}</p>
-          <p class="autoria"><b>{{ sticker.authorship }}</b></p>
+          <p class="conteudo">{{ form.get('content')?.value }}</p>
+          <p class="autoria"><b>{{ form.get('authorship')?.value }}</b></p>
         </div>
       </div>
     </div>
     <div class="acoes">
       <button
+        [ngClass]="enableButton()"
         (click)="editSticker()"
-        class="botao">Salvar
+        class="botao"
+        [disabled]="!form.valid">Salvar
       </button>
       <button
         routerLink=""
