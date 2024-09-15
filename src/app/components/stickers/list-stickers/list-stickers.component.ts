@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Sticker } from 'src/app/models/sticker';
+import { StickerService } from '../services/sticker.service';
 
 @Component({
   selector: 'app-list-stickers',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListStickersComponent implements OnInit {
 
-  constructor() { }
+  stickersList!: Array<Sticker>;
+
+  constructor(
+    private stickerService: StickerService
+  ) { }
 
   ngOnInit(): void {
   }
