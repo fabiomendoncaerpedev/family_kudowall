@@ -1,0 +1,15 @@
+<div
+  [ngClass]="stickerWidth"
+  class="pensamento {{ sticker.model }} ff-roboto-mono">
+  <img src="../../../../assets/images/{{ sticker.model }}.png" alt="Colored Quotes">
+  <p class="conteudo">{{ sticker.content }}</p>
+  <p class="authorship"><b>{{ sticker.authorship }}</b></p>
+  <div class="acoes">
+    <button class="botao-editar">
+      <img src="../../../../assets/images/icone-editar.png" alt="Edit Icon">
+    </button>
+    <button class="botao-excluir">
+      <img src="../../../../assets/images/icone-excluir.png" alt="Exclude Icon">
+    </button>
+  </div>
+</div>
