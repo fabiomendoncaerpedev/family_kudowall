@@ -12,12 +12,14 @@ export class StickerService {
     private http: HttpClient
   ) { }
 
-  list(page: number): Observable<Array<Sticker>> {
-    const itemsByPage: number = 2;
-
+  list(page: number, filter: string): Observable<Array<Sticker>> {
+    const itemsByPage: number = 6;
     let params = new HttpParams()
       .set('_page', page)
       .set('_limit', itemsByPage);
+
+    if (filter?.trim().length > 2)
+      params = params.set('q', filter);
 
     return this.http
       .get<Array<Sticker>>(this.API, { params });
