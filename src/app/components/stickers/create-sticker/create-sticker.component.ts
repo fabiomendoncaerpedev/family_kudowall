@@ -29,7 +29,8 @@ export class CreateStickerComponent implements OnInit {
         Validators.required,
         Validators.minLength(3)
       ])],
-      model: ['modelo3']
+      model: ['modelo3'],
+      favorite: [false]
     });
   }
 
@@ -42,6 +43,6 @@ export class CreateStickerComponent implements OnInit {
   }
 
   enableButton(): string {
-    return this.form.valid ? 'botao' : 'botao__desabilitado';
+    return this.form.valid ? 'botao' : 'botao botao__desabilitado';
   }
 }

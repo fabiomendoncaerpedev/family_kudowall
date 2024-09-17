@@ -4,67 +4,85 @@
       "id": 1,
       "content": "Que bom que você veio",
       "authorship": "Fabio",
-      "model": "modelo1"
+      "model": "modelo1",
+      "favorite": false
     },
     {
       "id": 2,
       "content": "Casei cambada de paias",
       "authorship": "Thatazinha do Bibinho",
-      "model": "modelo1"
+      "model": "modelo1",
+      "favorite": true
     },
     {
       "id": 3,
       "content": "Que bom que você veio truta",
       "authorship": "Vidao",
-      "model": "modelo1"
+      "model": "modelo1",
+      "favorite": true
     },
     {
       "authorship": "eu mesmo ja enjoei",
       "content": "agora sim vai dar bom real oficial",
       "model": "modelo3",
-      "id": 6
+      "id": 6,
+      "favorite": false
     },
     {
       "id": 7,
       "content": "mais um testezinho safado",
       "authorship": "tutuzi",
-      "model": "modelo1"
+      "model": "modelo1",
+      "favorite": false
     },
     {
       "authorship": "",
       "content": "",
       "model": "modelo3",
-      "id": 8
+      "id": 8,
+      "favorite": true
     },
     {
       "authorship": "",
       "content": "",
       "model": "modelo3",
-      "id": 9
+      "id": 9,
+      "favorite": true
     },
     {
       "content": "           ",
       "authorship": "a",
       "model": "modelo3",
-      "id": 10
+      "id": 10,
+      "favorite": true
     },
     {
       "content": "que a força esteja com voce",
       "authorship": "you",
       "model": "modelo3",
-      "id": 11
+      "id": 11,
+      "favorite": true
     },
     {
       "content": "fafafa",
       "authorship": "ggafa",
       "model": "modelo3",
-      "id": 12
+      "id": 12,
+      "favorite": false
     },
     {
       "id": 13,
       "content": "hoja tá melhor que ontem",
       "authorship": "desconhecido",
-      "model": "modelo3"
+      "model": "modelo3",
+      "favorite": true
+    },
+    {
+      "content": "testinho novo",
+      "authorship": "dev apressadinho",
+      "model": "modelo2",
+      "favorite": false,
+      "id": 14
     }
   ]
 }

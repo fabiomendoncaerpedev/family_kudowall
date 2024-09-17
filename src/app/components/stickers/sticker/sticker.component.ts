@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { StickerService } from './../services/sticker.service';
 import { Sticker } from 'src/app/models/sticker';
 
 @Component({
@@ -9,13 +10,27 @@ import { Sticker } from 'src/app/models/sticker';
 export class StickerComponent implements OnInit {
 
   @Input('sticker-info') sticker!: Sticker;
+  @Output('delete-sticker') deleteSticker: EventEmitter<number> = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    private stickerService: StickerService
+  ) { }
 
   ngOnInit(): void {
   }
 
   stickerWidth(): string {
     return this.sticker.content.length >= 256 ? 'pensamento-g' : 'pensamento-p';
+  }
+
+  changeFavorIcon(): string {
+    return this.sticker.favorite ? 'ativo' : 'inativo';
+  }
+
+  updateFavorite() {
+    this.stickerService.changeFavorite(this.sticker).subscribe((response) => {
+      if (!response.favorite)
+        this.deleteSticker.emit(response.id);
+    });
   }
 }

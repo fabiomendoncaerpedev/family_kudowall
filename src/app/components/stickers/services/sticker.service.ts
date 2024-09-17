@@ -12,7 +12,7 @@ export class StickerService {
     private http: HttpClient
   ) { }
 
-  list(page: number, filter: string): Observable<Array<Sticker>> {
+  list(page: number, filter: string, favorite: boolean): Observable<Array<Sticker>> {
     const itemsByPage: number = 6;
     let params = new HttpParams()
       .set('_page', page)
@@ -20,6 +20,9 @@ export class StickerService {
 
     if (filter?.trim().length > 2)
       params = params.set('q', filter);
+
+    if (favorite)
+      params = params.set('favorite', favorite);
 
     return this.http
       .get<Array<Sticker>>(this.API, { params });
@@ -45,5 +48,11 @@ export class StickerService {
     const url = `${this.API}/${sticker.id}`;
 
     return this.http.put<Sticker>(url, sticker);
+  }
+
+  changeFavorite(sticker: Sticker): Observable<Sticker> {
+    sticker.favorite = !sticker.favorite;
+
+    return this.edit(sticker);
   }
 }

@@ -11,10 +11,21 @@
       >
       <img src="../../../../assets/images/lupa.png" alt="Search Icon">
     </div>
-    <h2 class="ff-inter">Meu Mural</h2>
-    <button
-      routerLink="/create-sticker"
-      class="botao">Adicionar Pensamento</button>
+    <h2 class="ff-inter">{{ title }}</h2>
+    <div class="botoes">
+      <button
+        (click)="reloadBoard()"
+        class="botao">Todos
+      </button>
+      <button
+        (click)="listFavorites()"
+        class="botao">Meus Favoritos
+      </button>
+      <button
+        routerLink="/create-sticker"
+        class="botao">Novo Pensamento
+      </button>
+    </div>
   </header>
   <div
     *ngIf="stickersList.length > 0, else noStickers"
@@ -22,6 +33,7 @@
     <app-sticker
       *ngFor="let item of stickersList"
       [sticker-info]="item"
+      (delete-sticker)="deleteSticker($event)"
       >
     </app-sticker>
   </div>

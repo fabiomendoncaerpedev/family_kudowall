@@ -13,7 +13,8 @@ export class DeleteStickerComponent implements OnInit {
   sticker: Sticker = {
     content: '',
     authorship: '',
-    model: ''
+    model: '',
+    favorite: false
   }
 
   constructor(

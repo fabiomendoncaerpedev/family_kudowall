@@ -31,7 +31,8 @@ export class EditStickerComponent implements OnInit {
         Validators.required,
         Validators.minLength(3)
       ])],
-      model: ['']
+      model: [''],
+      favorite: [false]
     });
     const id = this.route.snapshot.paramMap.get('id');
     this.stickerService.findById(parseInt(id!)).subscribe((response) => {

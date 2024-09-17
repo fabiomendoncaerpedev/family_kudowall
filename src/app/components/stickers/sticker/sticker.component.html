@@ -5,6 +5,13 @@
   <p class="conteudo">{{ sticker.content }}</p>
   <p class="authorship"><b>{{ sticker.authorship }}</b></p>
   <div class="acoes">
+    <button
+      (click)="updateFavorite()"
+      class="botao-favorito">
+      <img
+        src="../../../../assets/images/icone-favorito-{{ changeFavorIcon() }}.png"
+        alt="Favorite Icon Actived/Deactivated">
+    </button>
     <button class="botao-editar">
       <img
         routerLink="/stickers/edit-sticker/{{ sticker.id }}"
