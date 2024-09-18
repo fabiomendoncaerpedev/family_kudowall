@@ -1,6 +1,9 @@
 # Family Kudowall
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+If you are now with a newer version the Angular CLI and not want to do downgrade, use npx in your angular CLI installing, as below:
+>cd .\familly-kudowall
+>npx npm i @angular/cli@14.0
 
 # Family Kudowall (BACKEND)
 
